@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    container_name: remix_starter
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: prisma
+      POSTGRES_DB: remix_starter
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+volumes:
+  postgres_volume:
